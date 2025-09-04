@@ -100,27 +100,27 @@ void print(List* list) {
 
 int main() {
     List list;
-    initList(&list);
+    initList(&list);  // 이중연결리스트 초기화
     
     int n;
-    scanf("%d", &n);
+    scanf("%d", &n);  // 연산 개수 입력
     
     for (int i = 0; i < n; i++) {
         char operation;
-        scanf(" %c", &operation);
+        scanf(" %c", &operation);  // 연산 종류 입력
         
-        if (operation == 'A') {
+        if (operation == 'A') {  // 삽입 연산
             int r;
             char e;
             scanf("%d %c", &r, &e);
             add(&list, r, e);
         }
-        else if (operation == 'D') {
+        else if (operation == 'D') {  // 삭제 연산
             int r;
             scanf("%d", &r);
             delete(&list, r);
         }
-        else if (operation == 'G') {
+        else if (operation == 'G') {  // 조회 연산
             int r;
             scanf("%d", &r);
             char result = get(&list, r);
@@ -128,7 +128,7 @@ int main() {
                 printf("%c\n", result);
             }
         }
-        else if (operation == 'P') {
+        else if (operation == 'P') {  // 출력 연산
             print(&list);
         }
     }
